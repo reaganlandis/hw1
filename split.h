@@ -19,4 +19,7 @@ struct Node
 
 void split(Node*& in, Node*& odds, Node*& evens);
 // WRITE YOUR CODE HERE
+void split_recursion(Node*& in, Node*& odds, Node*& evens);
+void pushFront(Node*& item, Node*& list);
+
 #endif

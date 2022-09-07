@@ -11,16 +11,38 @@ the function below should be the only one in this file.
 */
 
 #include "split.h"
+#include <cstddef>
 
 /* Add a prototype for a helper function here if you need */
+void split_recursion(Node*& in, Node*& odds, Node*& evens);
+void pushFront(Node*& item, Node*& list);
 
 void split(Node*& in, Node*& odds, Node*& evens)
 {
   /* Add code here */
 // WRITE YOUR CODE HERE
+  split_recursion(in, odds, evens);
+  in = NULL;
 
 }
-
 /* If you needed a helper function, write it here */
+void split_recursion(Node*& in, Node*& odds, Node*& evens){
+   if(in == NULL){
+   return;
+ }
+ else{
+   split(in->next, odds, evens);
+   if((in->value%2==0)){
+      pushFront(in, evens);
+   }
+   else{
+     pushFront(in, odds);
+   }
+ }
+}
+void pushFront(Node*& item, Node*& list){
+  item->next = list;
+  list = item;
+}
 
 // WRITE YOUR CODE HERE
