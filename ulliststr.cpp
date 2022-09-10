@@ -54,8 +54,10 @@ size_t ULListStr::size() const
 
 void ULListStr::pop_front(){
   if(size_ == 1){
+    Item* temp = head_;
     head_ = NULL;
     tail_ = NULL;
+    delete temp;
   }
   else if(size_ == 0){
     return;
@@ -98,8 +100,10 @@ void ULListStr::push_back(const std::string& val){
 
 void ULListStr::pop_back(){
   if(size_==1){
+    Item* temp = head_;
     head_ = NULL;
     tail_ = NULL;
+    delete temp;
   }
   else if(size_ == 0){
     return;

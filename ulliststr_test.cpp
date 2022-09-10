@@ -81,5 +81,6 @@ int main(int argc, char* argv[])
   for(int i = 0; i<11; i++){
     dat.pop_back();
   }
+  dat.clear();
   return 0;
 }
